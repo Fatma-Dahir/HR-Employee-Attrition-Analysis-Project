@@ -18,7 +18,7 @@ This is a HR Attrition Analysis Project for Panama Limited, a Financial Technolo
 
 
 ## Data Sources
-The primary dataset used for this analysis is the "HR_Data.csv" file, which contains detailed information about each employee in the company.
+The primary dataset used for this analysis is the [Original HR data](https://github.com/Fatma-Dahir/HR-Employee-Attrition-Analysis-Project/blob/main/Original%20HR%20data.xlsx) which contains detailed information about each employee in the company.
 
 ## Tools
 - MySQL Workbench - Data Cleaning and Analysis [Download Here](https://dev.mysql.com/downloads/installer/)
