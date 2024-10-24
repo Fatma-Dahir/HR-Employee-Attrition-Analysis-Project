@@ -8,11 +8,14 @@
 - [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Data Analysis](#data-analysis)
 - [Results & Findings](#results--findings)
-- [Recommendations](#Recommendations)
+- [Recommendations](#recommendations)
 - [Limitations](#limitations)
 
 ## Project Overview
 This is a HR Attrition Analysis Project for Panama Limited, a Financial Technology Company. It includes data cleaning, exploratory analysis and visualizations to identify the key factors contributing to high employee attrition and provide actionable recommendations to reduce turnover. Advanced SQL techniques were employed for data cleaning and analysis, while Excel was used for visualizations.
+
+![Dashboard](https://github.com/user-attachments/assets/f5c8f25f-1c73-4b73-b08e-38545806c64f)
+
 
 ## Data Sources
 The primary dataset used for this analysis is the "HR_Data.csv" file, which contains detailed information about each employee in the company.
