@@ -1,17 +1,39 @@
 -- DATA CLEANING
--- Check for Duplicates 
-SELECT ID, COUNT(*)
+-- Check for null values in all columns
+SELECT 
+    SUM(CASE WHEN Id IS NULL THEN 1 ELSE 0 END) AS Id_Null,
+    SUM(CASE WHEN First_name IS NULL THEN 1 ELSE 0 END) AS First_Name_Null,
+    SUM(CASE WHEN Last_name IS NULL THEN 1 ELSE 0 END) AS Last_name_Null,
+    SUM(CASE WHEN Birthdate IS NULL THEN 1 ELSE 0 END) AS Birthdate_Null,
+    SUM(CASE WHEN Gender IS NULL THEN 1 ELSE 0 END) AS Gender_Null,
+    SUM(CASE WHEN Race IS NULL THEN 1 ELSE 0 END) AS Race_Null,
+    SUM(CASE WHEN Department IS NULL THEN 1 ELSE 0 END) AS Department_Null,
+    SUM(CASE WHEN Jobtitle IS NULL THEN 1 ELSE 0 END) AS Jobtitle_Null,
+    SUM(CASE WHEN Location IS NULL THEN 1 ELSE 0 END) AS Location_Null,
+    SUM(CASE WHEN Hire_date IS NULL THEN 1 ELSE 0 END) AS Hire_date_Null,
+    SUM(CASE WHEN Termdate IS NULL THEN 1 ELSE 0 END) AS Termdate_Null,
+    SUM(CASE WHEN Location_city IS NULL THEN 1 ELSE 0 END) AS Location_city_Null,
+    SUM(CASE WHEN Location_state IS NULL THEN 1 ELSE 0 END) AS Location_state_Null
+FROM data;
+
+-- Check for Duplicates across all columns
+SELECT 
+    Id, COUNT(*) AS Duplicate_Count
 FROM data
-GROUP BY Id
+GROUP BY 
+    Id, First_name, Last_name, Birthdate, Gender, Race, Department, Jobtitle, Location, 
+    Hire_date, Termdate, Location_city, Location_state
 HAVING COUNT(*) > 1;
 
--- Delete Duplicates
+-- Create a New Table with Distinct Rows (Deduplicated)
 CREATE TABLE new_table AS
 SELECT DISTINCT *
 FROM data;
 
+-- Drop the old table (data) after creating the new deduplicated table
 DROP TABLE data;
 
+-- Rename the new table to the original table name (data)
 RENAME TABLE new_table TO data;
 
 -- STANDARDIZE DATA
