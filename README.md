@@ -27,8 +27,8 @@ The primary dataset used for this analysis is the [Original HR data](https://git
 ## Data Cleaning
 In this phase, I performed the following tasks:
 1. Imported the HR Data into MySQL Workbench using the Import Table Wizard
-2. Handled duplicate values
-3. Standardized the data
+2. Checked for null values and duplicate records, ensuring data quality
+3. Standardized the data for consistency and analysis
 
 ## Exploratory Data Analysis
 EDA involved exploring the data to answer key questions such as:
